@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-md">
+  <div class="q-pa-none" id="body">
     <q-carousel
       swipeable
       animated
@@ -11,10 +11,11 @@
       <q-carousel-slide class="carousel-slide" :name="2" :img-src="images.parallax1" />
       <q-carousel-slide class="carousel-slide" :name="3" :img-src="images.parallax2" />
       <q-carousel-slide class="carousel-slide" :name="4" :img-src="images.quasar" />
+      
     </q-carousel>
+
   </div>
 </template>
-
 
 <script>
 import { ref } from 'vue'
@@ -41,6 +42,10 @@ export default {
 </script>
 
 <style scoped>
+#body {
+  margin-top: 2%;
+}
+
 .carousel-slide {
   display: flex;
   justify-content: center;
@@ -50,8 +55,14 @@ export default {
 
 .carousel-slide img {
   width: 100%;
-  height: 200%;
+  height: auto;
   object-fit: cover; /* Menyesuaikan gambar agar tetap proporsional */
+  
+}
+
+@media (max-width: 600px) {
+  .carousel-slide img {
+    height: auto; /* Biarkan gambar menyesuaikan tingginya secara otomatis */
+  }
 }
 </style>
-

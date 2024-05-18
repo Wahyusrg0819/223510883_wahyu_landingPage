@@ -80,21 +80,33 @@
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 16px;
   }
+  
   .my-card {
     width: 100%;
     max-width: 100%;
     background-image: linear-gradient(163deg, #F6EEC9 10%, #F6EEC9 100%);
-    border-radius:5px;
+    border-radius: 5px;
     transition: all .3s;
     cursor: pointer;
   }
+  
   .card-img {
     width: 100%;
     height: auto;
   }
-
-    .my-card:hover {
+  
+  .my-card:hover {
     transform: scale(0.98);
-    
+  }
+  
+  @media (max-width: 600px) {
+    .grid-wrapper {
+      grid-template-columns: 1fr;
     }
+  
+    .my-card {
+      margin-bottom: 16px;
+    }
+  }
   </style>
+  
